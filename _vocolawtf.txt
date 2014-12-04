@@ -1,0 +1,70 @@
+# Global voice commands
+
+
+# Voice commands for clipx
+
+hot clip= SendSystemKeys({CTRL+alt+shift+v});
+primary paste = SendSystemKeys({CTRL+alt+shift+v}{Enter});
+secondary paste  = SendSystemKeys({CTRL+alt+shift+p}{Enter});
+#paste 0..9 = SendSystemKeys({CTRL+alt+shift+v}) Wait(500)$1;
+
+
+### Keystrokes
+tick = `;
+Scape = {esc};
+Entrée = {enter};
+Back={BACKSPACE};
+tick <_anything> = {`}$1;
+
+Quesh = '?'; Queshes ="`??";
+1..99 Tab = {TAB_$1};
+
+### Uncategorized
+switch to chrome = AppBringUp(chrome);
+go chrome = AppBringUp(chrome);
+go VLC = HeardWord(switch, to, VLC,  media, player);
+go notepad = AppBringUp(notepad++);
+Next tab = {CTRL+TAB};
+Last tab = {CTRL+SHIFT+TAB};
+1..99 Next tab = {CTRL+TAB_$1};
+1..99 Last tab = {CTRL+SHIFT+TAB_$1};
+test 1..99 law law law = SendSystemKeys({L}{L}{$1}{L}{L}{L}{Enter});
+
+### Mouse
+Rick=ButtonClick(2);
+(lick | leftish)=ButtonClick(1);
+click the mouse=ButtonClick(1);
+
+
+### Cursor movement
+<direction> := Left | Right | Up | Down;
+#moveCursor(<direction>, number) := {$1_$number};
+#1..99 (left | right| down|up) = {$2_$1};
+#1..99 (left | right| down|up) = moveCursor($1, $2);
+pure testicle 1..99 <direction> = {$2_$1};
+#hella balls = moveCursor(Up, 3);
+setLanguage(letter, language) := {Alt+l} $letter
+
+                                 {Alt+$field} $value {Enter};
+double true = 	setLanguage(field, value);			 
+
+
+### Page navigation
+Page 1..99 = {pgdn_$1};
+Page up 1..99 = {pgup_$1};
+
+find = {CTRL +f};
+find Text <_anything> = {Ctrl+f} $1 {Enter};
+
+
+### Windows
+
+system tray = HeardWord(press, Windows, b){enter};
+Context={shift+F10};
+
+#Aero
+Snap (right|left|down|up) = HeardWord(press, Windows, $1);
+
+
+
+
